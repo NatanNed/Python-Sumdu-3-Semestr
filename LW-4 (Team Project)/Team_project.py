@@ -43,3 +43,16 @@ print("Text with each word capitalized:", title_text)
 # 10. Replacing all spaces with hyphens Yana Ponomarova (student3)
 hyphenated_text = text.replace(" ", "-")
 print("Text with hyphens instead of spaces:", hyphenated_text)
+
+# 11. Replace the word "research" with "studies" Sukov Mykola (student4)
+replaced_text = text.replace('research', 'studies')
+print("Text after replacement:\n", replaced_text)
+
+# 12. Count the number of words Sukov Mykola (student4)
+words = text.split()
+word_count = len(words)
+print("Number of words in the text:", word_count)
+
+# 13. Reverse the text Sukov Mykola (student4)
+reversed_text = text[::-1]
+print("Text in reverse order:\n", reversed_text)
