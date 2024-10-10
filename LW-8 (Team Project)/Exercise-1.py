@@ -192,3 +192,70 @@ remove_student(students_performance['students'], student_to_remove)
 
 # Виведення списку студентів, які залишилися після видалення
 print_students(students_performance['students'], "Список студентів після видалення")
+
+
+
+# Бєліков Владислав (Студент 5) додав функцію яка дозволяє визначити студентів які є хорошистами
+# та відмінниками (мають оцінку більше за 80) та хто не склав іспит з математики.
+
+# Функція для знаходження студентів з оцінкою більше 80.
+def find_honor_students(students):
+    """
+    Знаходить студентів, які є хорошистами або відмінниками (оцінка з усіх предметів вище 80).
+    
+    :param students: список студентів
+    :return: список студентів, які мають оцінку вище 80 з усіх предметів
+    """
+    honor_students = []
+    
+    for student in students:
+        if all(grade > 80 for grade in student['subjects_grades'].values()):
+            honor_students.append(student)
+    
+    return honor_students
+
+# Функція для знаходження студентів які не склали певний предмет.
+def find_students_who_failed(students, subject):
+    """
+    Знаходить студентів, які не склали певний предмет (оцінка нижче 60).
+    
+    :param students: список студентів
+    :param subject: предмет, який перевіряється
+    :return: список студентів, які не склали предмет
+    """
+    failed_students = []
+
+    for student in students:
+        grade = student['subjects_grades'].get(subject)
+        if grade is not None and grade < 60:
+            failed_students.append(student)
+
+    return failed_students
+
+# Використовую функцію Недайхліба Натана для додавання студента.
+add_student(
+    students_performance,
+    "Анастасія Анастасья Настівна",
+    2,
+    {
+        "Математика": 58,
+        "Фізика": 72,
+        "Програмування": 67
+    }
+)
+
+print_students(students_performance['students'], "Список студентів")
+
+# Використання функції для пошуку хорошистів та відмінників
+honor_students_list = find_honor_students(students_performance['students'])
+
+# Виведення списку студентів
+print_students(honor_students_list, "Список хорошистів та відмінників")
+
+# Приклад використання функції для пошуку студентів, які не склали предмет
+subject_to_check = "Математика"
+failed_students_list = find_students_who_failed(students_performance['students'], subject_to_check)
+
+# Виведення списку студентів, які не склали предмет
+print_students(failed_students_list, f"Список студентів, які не склали {subject_to_check}")
+
