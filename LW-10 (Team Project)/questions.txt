@@ -8,3 +8,9 @@ resulting from evaluating the expression in the context of the for and
 if clauses. For example, [x**2 for x in range(10)] generates a list of 
 squares from 0 to 9.
 Question: What is the difference between deep copy and shallow copy in Python?
+Surname: Shapoval
+Answer: In Python, a shallow copy creates a new object but only copies references to the internal objects, 
+so changes to those objects affect the original. In contrast, a deep copy recursively creates new 
+copies of all objects contained in the collection, meaning that changes to the copy do not affect the original. 
+Thus, deep copying ensures complete independence of the copy from the original, while shallow copying does not.
+Question: How does exception handling work in Python?
