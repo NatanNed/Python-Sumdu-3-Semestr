@@ -4,17 +4,18 @@ try:
     # Open 'questions.txt' in write mode
     with open('questions.txt', 'w') as file:
         # Write the student's surname
-        file.write('Surname: Ivanenko\n')
+        file.write('Surname: Nedaikhlib\n')
         # Write the programming question for the second student
         file.write('Question: Can you explain how list comprehensions work in Python?\n')
 except IOError:
     # Print an error message if file operations fail
     print("Error: Unable to work with the file.")
+
 # Second student(Sukov Mykola) reads the question and writes the answer
 try:
     with open('questions.txt', 'a') as file: 
         # Write the student's surname
-        file.write('Surname: Zarytska\n')
+        file.write('Surname: Sukov\n')
         # Provide the answer
         file.write('Answer: List comprehensions provide a concise way to create lists. \n')
         file.write('They consist of brackets containing an expression followed by a for clause, \n')

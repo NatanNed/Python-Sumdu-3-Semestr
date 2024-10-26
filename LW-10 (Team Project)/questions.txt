@@ -1,6 +1,6 @@
-Surname: Ivanenko
+Surname: Nedaikhlib
 Question: Can you explain how list comprehensions work in Python?
-Surname: Zarytska
+Surname: Sukov
 Answer: List comprehensions provide a concise way to create lists. 
 They consist of brackets containing an expression followed by a for clause, 
 and then zero or more for or if clauses. The result will be a new list 
