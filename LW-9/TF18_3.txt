@@ -1,0 +1,6 @@
+This is the content 
+of the first file.
+I
+t has multiple lines
+.
+The end.
