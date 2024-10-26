@@ -26,3 +26,19 @@ try:
         file.write('Question: What is the difference between deep copy and shallow copy in Python?\n')
 except IOError:
     print("Error: Unable to work with the file.")
+
+# Third student (Shapoval Anastasia) writes the answer and adds a question 
+try:
+    with open('questions.txt', 'a') as file:
+        # Write the student's surname
+        file.write('Surname: Shapoval\n')
+        # Provide the answer
+        file.write('Answer: In Python, a shallow copy creates a new object but only copies references to the internal objects, \n')
+        file.write('so changes to those objects affect the original. In contrast, a deep copy recursively creates new \n')
+        file.write('copies of all objects contained in the collection, meaning that changes to the copy do not affect the original. \n')
+        file.write('Thus, deep copying ensures complete independence of the copy from the original, while shallow copying does not.\n')
+        # Pose a new question for the next student
+        file.write('Question: How does exception handling work in Python?\n')
+except IOError:
+    print("Error: Unable to work with the file.")
+
