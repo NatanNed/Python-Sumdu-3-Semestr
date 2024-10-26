@@ -1,0 +1,2 @@
+Surname: Ivanenko
+Question: Can you explain how list comprehensions work in Python?
