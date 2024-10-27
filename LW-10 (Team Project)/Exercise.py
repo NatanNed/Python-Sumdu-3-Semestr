@@ -43,3 +43,18 @@ try:
 except IOError:
     print("Error: Unable to work with the file.")
 
+# Fourth student (Belikov Vladyslav Volodymyrovych) writes the answer and adds a question
+try:
+    with open('questions.txt', 'a') as file:
+        # Write the student's surname
+        file.write('Surname: Belikov\n')
+        # Provide the answer
+        file.write('Answer: Exception handling in Python is done using try, except, else, and finally blocks. \n')
+        file.write('When an exception occurs in the try block, the code jumps to the except block. If no exception occurs, \n')
+        file.write('the else block is executed. The finally block is executed no matter what, whether an exception occurred or not.\n')
+        # Pose a new question for the next student
+        file.write('Question: What is your favorite Python module or library, and why do you like it?\n')
+except IOError:
+    print("Error: Unable to work with the file.")
+
+
