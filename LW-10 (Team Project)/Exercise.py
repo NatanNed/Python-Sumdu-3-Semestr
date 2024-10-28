@@ -57,4 +57,21 @@ try:
 except IOError:
     print("Error: Unable to work with the file.")
 
+# Fourth student (Ponomaryova Yana) writes the answer and adds a question
+try:
+    with open('questions.txt', 'a') as file:
+        # Write the student's surname
+        file.write('Surname: Ponomaryova\n')
+        # Provide the answer
+        file.write('Answer: My favorite module is NumPy. It provides powerful capabilities for working with multidimensional arrays and \n')
+        file.write('matrices, and includes a large collection of mathematical functions for efficient numerical data processing. \n')
+        file.write('NumPy is the foundation for many other libraries, such as Pandas and SciPy, making it an essential tool for\n')
+        file.write('scientific computing.\n')
+        # Pose a new question for the next student
+        file.write('Question: Can you explain how to handle files in Python, including reading and writing?\n')
+except IOError:
+    print("Error: Unable to work with the file.")
+
+         
+        
 
