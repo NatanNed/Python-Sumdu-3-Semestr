@@ -1,8 +1,3 @@
-Second file has diff
-erent content, longe
-r than the first one
-.
-It also has multip
-le lines.
-The conclu
-sion is here.
+Second file has different content, longer than the first one.
+It also has multiple lines.
+The conclusion is here.
