@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Ukraine",
+        "population": 42.5,
+        "area": 603.7
+    },
+    {
+        "name": "Germany",
+        "population": 83.2,
+        "area": 357.4
+    },
+    {
+        "name": "France",
+        "population": 67.1,
+        "area": 551.3
+    },
+    {
+        "name": "Italy",
+        "population": 60.4,
+        "area": 301.3
+    },
+    {
+        "name": "Poland",
+        "population": 38.4,
+        "area": 312.7
+    },
+    {
+        "name": "Russia",
+        "population": 144.5,
+        "area": 17098.4
+    },
+    {
+        "name": "Spain",
+        "population": 47.4,
+        "area": 505.9
+    },
+    {
+        "name": "Canada",
+        "population": 37.6,
+        "area": 9985.0
+    },
+    {
+        "name": "China",
+        "population": 1402.0,
+        "area": 9596.0
+    },
+    {
+        "name": "India",
+        "population": 1366.0,
+        "area": 3287.0
+    }
+]
