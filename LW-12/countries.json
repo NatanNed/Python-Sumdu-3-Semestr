@@ -48,5 +48,10 @@
         "name": "India",
         "population": 1366.0,
         "area": 3287.0
+    },
+    {
+        "name": "Brazil",
+        "population": 211.8,
+        "area": 8515.0
     }
 ]
