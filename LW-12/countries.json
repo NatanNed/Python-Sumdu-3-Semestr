@@ -1,5 +1,4 @@
-[
-    {
+{
         "name": "Ukraine",
         "population": 42.5,
         "area": 603.7
@@ -54,4 +53,3 @@
         "population": 211.8,
         "area": 8515.0
     }
-]
