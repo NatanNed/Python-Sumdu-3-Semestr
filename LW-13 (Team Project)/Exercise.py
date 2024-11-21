@@ -147,3 +147,62 @@ if __name__ == "__main__":
     update_and_convert_csv_to_json(csv_filename, json_filename)
 
     print(f"Data from {csv_filename} successfully updated and converted to {json_filename}")
+
+  # Студент 4 Бєліков Владислав
+def convert_json_to_csv_with_updates(json_filename, csv_filename):
+    """
+    Reads data from a JSON file, adds new rows, and writes it to a new CSV file.
+    """
+    try:
+        # Read data from the JSON file
+        with open(json_filename, 'r', encoding='utf-8') as jsonfile:
+            data = json.load(jsonfile)
+
+        # Check if 'employees' key exists in JSON data
+        if 'employees' not in data:
+            print(f"Key 'employees' not found in {json_filename}")
+            sys.exit(1)
+
+        employees = data['employees']
+
+        # Add new employees to the data
+        if not any(emp['id'] == '8' for emp in employees):
+            employees.append({'id': '8', 'name': 'Victor', 'age': '29'})
+        if not any(emp['id'] == '9' for emp in employees):
+            employees.append({'id': '9', 'name': 'Diana', 'age': '33'})
+
+        # Define fieldnames for the CSV file
+        fieldnames = ['id', 'name', 'age']
+
+        # Write updated data to the new CSV file
+        with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            # Write the header row
+            writer.writeheader()
+
+            # Write all rows from the updated employee list
+            for employee in employees:
+                writer.writerow(employee)
+
+    except FileNotFoundError:
+        print(f"File {json_filename} not found.")
+        sys.exit(1)
+    except IOError as e:
+        print(f"Error working with files: {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Unknown error: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    # Update and convert JSON to a new CSV file
+    json_filename = 'data_student3.json'
+    new_csv_filename = 'data_student4.csv'
+
+    convert_json_to_csv_with_updates(json_filename, new_csv_filename)
+
+    print(f"Data from {json_filename} successfully converted and saved to {new_csv_filename}")
+ 
+
