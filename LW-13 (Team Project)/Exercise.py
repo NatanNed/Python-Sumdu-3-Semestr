@@ -138,12 +138,56 @@ def update_and_convert_csv_to_json(csv_filename, json_filename):
         print(f"Unknown error: {e}")
         sys.exit(1)
 
+# Студентка 4 Пономарьова Яна
+def convert_json_to_csv_with_update(json_filename, csv_filename):
+    """
+    Reads data from a JSON file, adds new rows to the CSV file and writes it back.
+    """
+    try:
+        # Reading data from a JSON file
+        with open(json_filename, 'r', encoding='utf-8') as jsonfile:
+            data = json.load(jsonfile)
+
+        if 'employees' not in data:
+            print(f"Key 'employees' not found in {json_filename}")
+            sys.exit(1)
+
+        employees = data['employees']
+
+        # Updating data
+        new_employees = [
+            {'id': '8', 'name': 'Oleg', 'age': '27'},
+            {'id': '9', 'name': 'Katerina', 'age': '24'}
+        ]
+
+        # We add new entries to the list of employees
+        employees.extend(new_employees)
+
+        # We write the data back to the CSV file
+        fieldnames = ['id', 'name', 'age']
+        with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+            
+            for employee in employees:
+                writer.writerow(employee)
+
+    except FileNotFoundError:
+        print(f"File {json_filename} not found.")
+        sys.exit(1)
+    except IOError as e:
+        print(f"Error working with files: {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Unknown error: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
-    csv_filename = 'data_student2.csv'
     json_filename = 'data_student3.json'
+    csv_filename = 'data_student4.csv'
 
-    # Update CSV and convert to JSON
-    update_and_convert_csv_to_json(csv_filename, json_filename)
+    # Перетворюємо JSON в CSV і додаємо нові записи
+    convert_json_to_csv_with_update(json_filename, csv_filename)
 
-    print(f"Data from {csv_filename} successfully updated and converted to {json_filename}")
+    print(f"Data from {json_filename} successfully converted and updated in {csv_filename}")
